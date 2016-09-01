@@ -118,5 +118,41 @@ public class TestArraySet {
 			j++;
 		}
 	}
+	
+	@Test
+	public final void testAddAll() {
+		ArraySet<Integer> t = new ArraySet<Integer>();
+		int counter = 0;
+		/* Add same values to the two test sets*/
+		for (int i = 1; i <= 10; i++) {
+			s.add(i);
+			t.add(i);
+			counter++;
+		}
+		System.out.println(s.size());
+		System.out.println(t.size());
+		System.out.println(counter);
+		/* Add one value that is different making sure 
+		 * that we add one new element into the main set*/
+		t.add(10001);
+		System.out.println(t.size());
+		System.out.println(s.size());
+		counter = counter + 1;
+		
+		boolean hasChanged = s.addAll(t);
+		boolean correct_counter = false;
+		
+		if (counter == s.size()) {
+			correct_counter = true;
+		}
+		
+		System.out.println(hasChanged);
+		
+		System.out.println(s.size());
+
+		assertTrue("addAll true, if added at least one element",hasChanged);
+		assertTrue("Size property is correct", correct_counter);
+		
+	}
 
 }
