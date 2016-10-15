@@ -24,6 +24,7 @@ public class TestMaxSet {
 		s = null;
 	}
 
+	@SuppressWarnings("unused")
 	@Test
 	public final void testMaxOfEmpty() {
 		try {

@@ -15,7 +15,7 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	 * @return an iterator over the elements in this queue
 	 */	
 	public Iterator<E> iterator() {
-		return null;
+		return new QueueIterator();
 	}
 
 	/**	
@@ -82,12 +82,29 @@ public class FifoQueue<E> extends AbstractQueue<E> implements Queue<E> {
 	private static class QueueNode<E> {
 		E element;
 		QueueNode<E> next;
-
 		private QueueNode(E x) {
 			element = x;
 			next = null;
 		}
 
+	}
+	
+	private class QueueIterator implements Iterator<E> {
+		private QueueNode<E> pos;
+		
+
+		@Override
+		public boolean hasNext() {
+			// TODO Auto-generated method stub
+			return false;
+		}
+
+		@Override
+		public E next() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
 	}
 
 }
